@@ -1,0 +1,19 @@
+[
+{
+"modid": "Gem Buffs",
+"name": "§6Gem Buffs",
+"description": "Magical Gems That Give Buffs",
+"version": "",
+"credits": "By Wiiboy222",
+"logoFile": "/gfx/GemBuffs/logo.png",
+"mcversion": "",
+"url": "",
+"updateUrl": "",
+"authorList": [ "Wiiboy222"],
+"parent":"",
+"screenshots": [],
+"dependencies": [
+"mod_MinecraftForge"
+]
+}
+]

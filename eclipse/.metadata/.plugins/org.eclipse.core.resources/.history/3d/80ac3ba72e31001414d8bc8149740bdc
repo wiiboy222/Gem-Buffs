@@ -1,0 +1,78 @@
+package com.wiiboy222.gembuffs.baseClasses;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+
+import com.wiiboy222.gembuffs.lib.*;
+import com.wiiboy222.technicraft.buildClasses.items.*;
+import com.wiiboy222.technicraft.buildClasses.tileEntities.grinderBuild.*;
+
+@Mod(modid=libReferences.MODID, name="Technicraft", version=libReferences.VERSION)
+
+public class baseModMain {
+	//items
+	public static Item healthGem;
+	public static Item powerGem;
+	public static Item defenceGem;
+	public static Item waterGem;
+	public static Item sightGem;
+	public static Item invisibilityGem;
+	public static Item movementGem;
+
+	public static CreativeTabs GemBuffs = new CreativeTabs("Gem Buffs"){
+		public Item getTabIconItem() {
+			return healthGem;
+		}
+	};
+	
+	@SidedProxy(clientSide = libReferences.CLIENT, serverSide = libReferences.COMMON)
+	public static proxyCommon proxy;
+	
+	@Mod.Instance(libReferences.MODID)
+    private static baseModMain instance = new baseModMain();
+	
+	@EventHandler
+	public void preInit(FMLPreInitializationEvent event) {
+		
+	//Gems
+		healthGem = new healthGem().setUnlocalizedName("HealthGem").setTextureName("technicraft:gem_health").setCreativeTab(GemBuffs);
+		GameRegistry.registerItem(healthGem, "Health Gem");
+		defenceGem = new Item().setUnlocalizedName("DefenceGem").setCreativeTab(GemBuffs).setTextureName("technicraft:gem_ruby");
+		GameRegistry.registerItem(defenceGem, "DefenceGem");
+		movementGem = new Item().setUnlocalizedName("MovementGem").setCreativeTab(GemBuffs).setTextureName("technicraft:gem_movement");
+		GameRegistry.registerItem(movementGem, "MovementGem");
+		sightGem = new Item().setUnlocalizedName("SightGem").setCreativeTab(GemBuffs).setTextureName("technicraft:gem_sight");
+		GameRegistry.registerItem(sightGem, "Sight Gem");
+		powerGem = new Item().setUnlocalizedName("PowerGem").setCreativeTab(GemBuffs).setTextureName("technicraft:gem_power");
+		GameRegistry.registerItem(powerGem, "Power Gem");
+		waterGem = new Item().setUnlocalizedName("WaterGem").setCreativeTab(GemBuffs).setTextureName("technicraft:gem_water");
+		GameRegistry.registerItem(sightGem, "Sight Gem");
+		invisibilityGem = new Item().setUnlocalizedName("invisibilityGem").setCreativeTab(GemBuffs).setTextureName("technicraft:gem_invisibility");
+		GameRegistry.registerItem(invisibilityGem, "invisibility Gem");
+
+        
+        //misc
+        GameRegistry.registerWorldGenerator(new worldGen(), 1);
+	}
+	@EventHandler
+	public void postInit(FMLPostInitializationEvent event){
+		proxy.registerRenderInformation();
+
+		        }
+	public static baseModMain getInstance() {
+		 return instance;
+	}
+}

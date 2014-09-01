@@ -1,0 +1,12 @@
+[12:07:15] [main/INFO]: Setting user: ForgeDevName
+[12:07:19] [Client thread/INFO]: LWJGL Version: 2.9.1
+[12:07:19] [Client thread/ERROR]: Couldn't initialize twitch stream
+[12:07:26] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:§6Gem Buffs
+[12:07:27] [Sound Library Loader/INFO]: Sound engine started
+[12:07:29] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[12:07:30] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[12:07:30] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:§6Gem Buffs
+[12:07:31] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[12:07:31] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[12:07:32] [Sound Library Loader/INFO]: Sound engine started
+[12:08:45] [Client thread/INFO]: Stopping!
